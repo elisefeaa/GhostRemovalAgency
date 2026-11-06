@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book a Service | Phantom Guard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <span class="logo-icon">👻</span>
+                Phantom Guard
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Founder</a></li>
+                <li><a href="booking.html" class="active">Book Now</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Booking Hero Section -->
+        <section class="booking-hero">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="tagline">PHANTOM GUARD • PARANORMAL RESPONSE UNIT</p>
+
+                <h1>
+                    YOUR HAUNTED SPACE.
+                    <span>OUR PROBLEM.</span>
+                </h1>
+
+                <p>
+                    Strange noises? Uninvited spirits?
+                    Let our paranormal specialists take care of it.
+                </p>
+
+                <a href="#bookingForm" class="hero-btn">
+                    EXPLORE OUR SERVICES ↓
+                </a>
+
+            </div>
+
+            <div class="hero-decoration">👻</div>
+
+        </section>
+
+
+        <!-- Service Package Section -->
+        <section class="package-section">
+
+            <div class="section-heading">
+                <p class="section-tag">CHOOSE YOUR DEFENCE</p>
+                <h2>Our Ghost Removal Packages</h2>
+                <p>Select the protection level that suits your situation.</p>
+            </div>
+
+            <div class="package-grid">
+
+                <!-- Basic Package -->
+                <div class="package-card">
+
+                    <div class="service-image">
+                        <img src="images/basicGhostRemoval.jpg"
+                             alt="Basic ghost removal service">
+                        <span class="image-number">01</span>
+                    </div>
+
+                    <div class="package-content">
+                        <span class="package-label">STARTER PROTECTION</span>
+                        <h3>Basic Ghost Removal</h3>
+
+                        <p>
+                            A simple cleansing service designed
+                            for minor paranormal disturbances.
+                        </p>
+
+                        <div class="package-price">
+                            RM100 <span>/ room</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Advanced Package -->
+                <div class="package-card featured-package">
+
+                    <div class="service-image">
+                        <img src="images/advancedGhostRemoval.jpg"
+                             alt="Advanced ghost removal service">
+                        <span class="image-number">02</span>
+                        <span class="popular-label">POPULAR</span>
+                    </div>
+
+                    <div class="package-content">
+                        <span class="package-label">ENHANCED PROTECTION</span>
+                        <h3>Advanced Ghost Removal</h3>
+
+                        <p>
+                            A more detailed investigation and
+                            cleansing for stronger paranormal activity.
+                        </p>
+
+                        <div class="package-price">
+                            RM200 <span>/ room</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Premium Package -->
+                <div class="package-card">
+
+                    <div class="service-image">
+                        <img src="images/premiumExorcism.jpg"
+                             alt="Premium exorcism service">
+                        <span class="image-number">03</span>
+                    </div>
+
+                    <div class="package-content">
+                        <span class="package-label">ULTIMATE PROTECTION</span>
+                        <h3>Premium Exorcism</h3>
+
+                        <p>
+                            An intensive supernatural cleansing
+                            for serious haunting situations.
+                        </p>
+
+                        <div class="package-price">
+                            RM350 <span>/ room</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Booking Form -->
+        <section class="booking-section" id="bookingForm">
+
+            <div class="section-heading">
+                <p class="section-tag">SECURE YOUR APPOINTMENT</p>
+                <h2>Booking Registration</h2>
+                <p>Complete the information below to estimate your booking cost.</p>
+            </div>
+
+
+            <form id="bookingFormElement" novalidate>
+
+                <!-- Customer Information -->
+                <div class="form-card">
+
+                    <div class="form-heading">
+                        <span>01</span>
+                        <div>
+                            <h2>Customer Information</h2>
+                            <p>Tell us who needs our protection.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="customerName">Full Name</label>
+                            <input type="text" id="customerName" placeholder="Enter your full name" required>
+                            <small class="error-message" id="nameError"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customerEmail">Email Address</label>
+                            <input type="email" id="customerEmail" placeholder="example@email.com" required>
+                            <small class="error-message" id="emailError"></small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Package Selection -->
+                <div class="form-card">
+
+                    <div class="form-heading">
+                        <span>02</span>
+                        <div>
+                            <h2>Select Your Package</h2>
+                            <p>Choose your preferred ghost removal service.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="package">Ghost Removal Package</label>
+
+                        <select id="package" required>
+
+                            <option value="">-- Select a Package --</option>
+
+                            <option value="100">
+                                Basic Ghost Removal - RM100 per room
+                            </option>
+
+                            <option value="200">
+                                Advanced Ghost Removal - RM200 per room
+                            </option>
+
+                            <option value="350">
+                                Premium Exorcism - RM350 per room
+                            </option>
+
+                        </select>
+                        <small class="error-message" id="packageError"></small>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="quantity">Number of Rooms</label>
+
+                        <input type="number" id="quantity" min="1" max="20" placeholder="Enter number of rooms" required>
+
+                        <small>Minimum: 1 room | Maximum: 20 rooms</small>
+
+                        <small class="error-message" id="quantityError"></small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Extra Services -->
+                <div class="form-card">
+
+                    <div class="form-heading">
+                        <span>03</span>
+                        <div>
+                            <h2>Additional Protection</h2>
+                            <p>Enhance your booking with optional services.</p>
+                        </div>
+                    </div>
+
+                    <div class="extra-grid">
+
+                        <!-- Holy Water -->
+                        <label class="extra-option">
+
+                            <img src="images/holyWater.jpg"
+                                 alt="Holy water treatment">
+
+                            <div class="extra-info">
+                                <h3>Holy Water Treatment</h3>
+                                <p>Spiritual cleansing for your space.</p>
+                                <span>RM30</span>
+                            </div>
+
+                            <input
+                                type="checkbox"
+                                class="extra"
+                                value="30"
+                                data-name="Holy Water Treatment"
+                            >
+
+                        </label>
+
+
+                        <!-- Protective Charm -->
+                        <label class="extra-option">
+
+                            <img src="images/protectiveCharm.jpg"
+                                 alt="Protective charm installation">
+
+                            <div class="extra-info">
+                                <h3>Protective Charm Installation</h3>
+                                <p>Additional supernatural protection.</p>
+                                <span>RM50</span>
+                            </div>
+
+                            <input
+                                type="checkbox"
+                                class="extra"
+                                value="50"
+                                data-name="Protective Charm Installation"
+                            >
+
+                        </label>
+
+
+                        <!-- Investigation -->
+                        <label class="extra-option">
+
+                            <img src="images/paranormalInvestigation.jpg"
+                                 alt="Paranormal investigation">
+
+                            <div class="extra-info">
+                                <h3>Paranormal Investigation</h3>
+                                <p>Investigate unexplained activities.</p>
+                                <span>RM80</span>
+                            </div>
+
+                            <input
+                                type="checkbox"
+                                class="extra"
+                                value="80"
+                                data-name="Paranormal Investigation"
+                            >
+
+                        </label>
+
+
+                        <!-- Emergency Service -->
+                        <label class="extra-option">
+
+                            <img src="images/emergencyNight.jpg"
+                                 alt="Emergency night service">
+
+                            <div class="extra-info">
+                                <h3>Emergency Night Service</h3>
+                                <p>Special assistance during the night.</p>
+                                <span>RM100</span>
+                            </div>
+
+                            <input
+                                type="checkbox"
+                                class="extra"
+                                value="100"
+                                data-name="Emergency Night Service"
+                            >
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Calculate Buttons -->
+                <div class="calculate-area">
+
+                    <button type="submit" class="calculate-btn">
+                        CALCULATE MY BOOKING COST →
+                    </button>
+
+                    <button type="reset" class="reset-btn">
+                        CLEAR FORM
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- Booking Result -->
+            <div id="bookingResult" class="result-card" hidden>
+
+                <div class="result-heading">
+                    <span>👻</span>
+                    <div>
+                        <p class="section-tag">MISSION DETAILS</p>
+                        <h2>Booking Summary</h2>
+                    </div>
+                </div>
+
+                <div id="resultDetails"></div>
+
+                <div class="total-price">
+
+                    <span>Total Booking Cost</span>
+
+                    <h2 id="totalCost">RM0.00</h2>
+
+                </div>
+
+                <p class="result-note">
+                    Thank you for choosing PhantomGuard.
+                    Your space deserves peace of mind.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>&copy; 2026 Phantom Guard. All Rights Reserved.</p>
+
+        <p>Protecting Your Space, One Ghost at a Time. 👻</p>
+
+    </footer>
+
+</body>
+</html>

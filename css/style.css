@@ -1,0 +1,1214 @@
+
+/* =========================================
+   1. GENERAL SETTINGS
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(ellipse at 50% 15%, rgba(112,70,160,0.23), transparent 48%),
+        radial-gradient(ellipse at 5% 65%, rgba(91,43,135,0.20), transparent 40%),
+        radial-gradient(ellipse at 95% 75%, rgba(91,43,135,0.18), transparent 40%),
+        linear-gradient(180deg, #0b0710, #1b1027 50%, #0b0710);
+
+    background-attachment: fixed;
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel', Georgia, serif;
+}
+
+button, input, select {
+    font-family: 'DM Sans', Arial, sans-serif;
+}
+
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================
+   2. FLOATING GHOST BACKGROUND
+========================================= */
+
+body::before {
+    content: "👻";
+    position: fixed;
+    top: 18%;
+    left: 4%;
+    font-size: 85px;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 0;
+    animation: ghostFloat 8s ease-in-out infinite;
+}
+
+body::after {
+    content: "👻";
+    position: fixed;
+    right: 5%;
+    bottom: 12%;
+    font-size: 110px;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+    animation: ghostFloat 10s ease-in-out infinite reverse;
+}
+
+@keyframes ghostFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(8deg);
+    }
+}
+
+
+/* =========================================
+   3. NAVIGATION BAR
+========================================= */
+
+header {
+    background: rgba(15, 9, 23, 0.94);
+    border-bottom: 1px solid rgba(198,160,255,0.25);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    backdrop-filter: blur(15px);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 8%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #d4b5ff;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    font-size: 30px;
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: #e8e0f0;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #d4b5ff;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   4. FOUNDER PAGE
+========================================= */
+
+.founder {
+    min-height: 750px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+}
+
+.founder-content {
+    max-width: 1100px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 55px;
+
+    background: rgba(45,30,62,0.65);
+    border: 1px solid rgba(198,160,255,0.25);
+    border-radius: 22px;
+    padding: 40px;
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+    transition: 0.4s;
+}
+
+.founder-content:hover {
+    border-color: #9164c4;
+    box-shadow: 0 15px 50px rgba(112,70,160,0.3);
+}
+
+.founder-image {
+    flex: 1;
+}
+
+.founder-image img {
+    width: 100%;
+    max-width: 420px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 3px solid #7046a0;
+    box-shadow: 0 0 30px rgba(112,70,160,0.3);
+    transition: 0.5s;
+}
+
+.founder-image img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 35px rgba(198,160,255,0.5);
+}
+
+.founder-details {
+    flex: 1.3;
+    min-width: 0;
+}
+
+.founder-label {
+    color: #d4b5ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.founder-details h1 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.founder-details h3 {
+    color: #c6a0ff;
+    font-size: 20px;
+    margin-bottom: 22px;
+}
+
+.founder-intro {
+    color: #d0c9dc;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.founder-info {
+    margin-bottom: 22px;
+}
+
+.founder-info p {
+    margin-bottom: 10px;
+}
+
+.founder-info strong {
+    color: #c6a0ff;
+}
+
+.founder-slogan {
+    color: #c6a0ff;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.founder-booking {
+    margin-top: 25px;
+}
+
+.founder-booking .book-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #7046a0, #a16ad9);
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(112,70,160,0.35);
+}
+
+.founder-booking .book-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(198,160,255,0.6);
+}
+
+
+/* =========================================
+   5. FOOTER
+========================================= */
+
+footer {
+    background: rgba(10,6,15,0.97);
+    text-align: center;
+    padding: 25px 10px;
+    border-top: 1px solid #493263;
+}
+
+footer p {
+    color: #a99db8;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+
+/* =========================================
+   6. BOOKING HERO SECTION
+========================================= */
+
+.booking-hero {
+    min-height: 550px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 90px 8%;
+
+    background:
+        linear-gradient(rgba(10,5,17,0.55), rgba(10,5,17,0.88)),
+        radial-gradient(ellipse at center, #54316f, #170d22 65%, #09060e);
+    border-bottom: 1px solid rgba(198,160,255,0.25);
+}
+
+.booking-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 100%, rgba(198,160,255,0.20), transparent 55%),
+        radial-gradient(ellipse at 10% 20%, rgba(112,70,160,0.25), transparent 40%);
+    animation: heroGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(10,5,17,0.2), transparent, rgba(10,5,17,0.2));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.tagline,
+.section-tag {
+    color: #d4b5ff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.booking-hero h1 {
+    font-size: clamp(35px, 6vw, 65px);
+    line-height: 1.2;
+    margin: 25px 0;
+    text-shadow: 0 0 25px rgba(198,160,255,0.35);
+}
+
+.booking-hero h1 span {
+    display: block;
+    color: #c6a0ff;
+    text-shadow: 0 0 25px rgba(198,160,255,0.6);
+}
+
+.booking-hero .hero-content > p:not(.tagline) {
+    color: #d7ccdf;
+    font-size: 16px;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 16px 32px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #7046a0, #a16ad9);
+    border: 1px solid #c6a0ff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    box-shadow: 0 0 25px rgba(145,100,196,0.4);
+}
+
+.hero-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px rgba(198,160,255,0.65);
+    background: linear-gradient(135deg, #9164c4, #c6a0ff);
+}
+
+.hero-decoration {
+    position: absolute;
+    right: 12%;
+    top: 18%;
+    font-size: 100px;
+    opacity: 0.12;
+    animation: ghostFloat 7s ease-in-out infinite;
+}
+
+
+/* =========================================
+   7. SECTION HEADINGS
+========================================= */
+
+.section-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 45px;
+}
+
+.section-heading h2 {
+    font-size: clamp(26px, 4vw, 38px);
+    margin: 12px 0;
+    color: #ffffff;
+}
+
+.section-heading > p:last-child {
+    color: #bdb0ca;
+}
+
+
+/* =========================================
+   8. PACKAGE CARDS
+========================================= */
+
+.package-section {
+    padding: 85px 8%;
+}
+
+.package-grid {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.package-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(35,22,48,0.88);
+    border: 1px solid rgba(198,160,255,0.2);
+    border-radius: 13px;
+    transition: 0.4s;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    border-color: #c6a0ff;
+    box-shadow: 0 15px 40px rgba(112,70,160,0.35);
+}
+
+.featured-package {
+    border: 2px solid #a16ad9;
+    box-shadow: 0 0 25px rgba(145,100,196,0.18);
+}
+
+.service-image {
+    height: 230px;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+.package-card:hover .service-image img {
+    transform: scale(1.1);
+}
+
+.service-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 45%, rgba(10,5,17,0.85));
+}
+
+.image-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 22px;
+    color: #ffffff;
+    text-shadow: 0 0 12px #000000;
+}
+
+.popular-label {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+    padding: 6px 12px;
+    background: #a16ad9;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.package-content {
+    padding: 25px;
+}
+
+.package-label {
+    color: #c6a0ff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.package-content h3 {
+    font-size: 19px;
+    margin: 12px 0;
+}
+
+.package-content p {
+    color: #bdb0ca;
+    font-size: 13px;
+    min-height: 65px;
+}
+
+.package-price {
+    color: #d4b5ff;
+    font-size: 29px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.package-price span {
+    font-size: 13px;
+    color: #a99db8;
+    font-weight: 400;
+}
+
+
+/* =========================================
+   9. BOOKING FORM SECTION
+========================================= */
+
+.booking-section {
+    padding: 85px 8%;
+    background: rgba(10,6,15,0.35);
+}
+
+#bookingFormElement {
+    max-width: 950px;
+    margin: auto;
+}
+
+.form-card {
+    max-width: 950px;
+    margin: 0 auto 28px;
+    padding: 35px;
+    background: linear-gradient(145deg, rgba(46,30,62,0.94), rgba(23,13,34,0.94));
+    border: 1px solid rgba(198,160,255,0.22);
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.form-card:hover {
+    border-color: rgba(198,160,255,0.6);
+    box-shadow: 0 12px 40px rgba(112,70,160,0.2);
+}
+
+.form-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(198,160,255,0.18);
+}
+
+.form-heading > span {
+    min-width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(112,70,160,0.3);
+    border: 1px solid #9164c4;
+    border-radius: 8px;
+    color: #d4b5ff;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.form-heading h2 {
+    font-size: 20px;
+    color: #d4b5ff;
+}
+
+.form-heading p {
+    color: #a99db8;
+    font-size: 13px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 9px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    background: #110b19;
+    color: #ffffff;
+    border: 1px solid #59416f;
+    border-radius: 7px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.form-group input::placeholder {
+    color: #83758f;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #9164c4;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #c6a0ff;
+    box-shadow: 0 0 15px rgba(198,160,255,0.2);
+}
+
+/* Normal instruction text */
+
+.form-group small:not(.error-message) {
+    display: block;
+    color: #a99db8;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   10. EXTRA SERVICE IMAGE CARDS
+========================================= */
+
+.extra-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.extra-option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 13px;
+    position: relative;
+    background: rgba(17,11,25,0.8);
+    border: 1px solid rgba(198,160,255,0.17);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.extra-option:hover {
+    background: rgba(112,70,160,0.18);
+    border-color: #9164c4;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(112,70,160,0.18);
+}
+
+.extra-option img {
+    width: 105px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 7px;
+    border: 1px solid #60477b;
+}
+
+.extra-info {
+    flex: 1;
+}
+
+.extra-info h3 {
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.extra-info p {
+    color: #a99db8;
+    font-size: 11px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.extra-info span {
+    color: #d4b5ff;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.extra-option input {
+    width: 19px;
+    height: 19px;
+    accent-color: #a16ad9;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.extra-option:has(input:checked) {
+    background: rgba(112,70,160,0.25);
+    border: 1px solid #c6a0ff;
+    box-shadow: 0 0 18px rgba(145,100,196,0.2);
+}
+
+
+/* =========================================
+   11. CALCULATE AND RESET BUTTONS
+========================================= */
+
+.calculate-area {
+    max-width: 950px;
+    margin: 35px auto 0;
+    display: flex;
+    gap: 18px;
+}
+
+.calculate-btn,
+.reset-btn {
+    flex: 1;
+    padding: 18px 20px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.calculate-btn {
+    color: #ffffff;
+    background: linear-gradient(135deg, #7046a0, #a16ad9);
+    border: 1px solid #c6a0ff;
+    box-shadow: 0 5px 25px rgba(112,70,160,0.3);
+}
+
+.calculate-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(198,160,255,0.5);
+    background: linear-gradient(135deg, #9164c4, #c6a0ff);
+}
+
+.reset-btn {
+    flex: 0.4;
+    color: #d4b5ff;
+    background: transparent;
+    border: 1px solid #7046a0;
+}
+
+.reset-btn:hover {
+    background: rgba(112,70,160,0.25);
+    border-color: #c6a0ff;
+    transform: translateY(-5px);
+}
+
+.calculate-btn:active,
+.reset-btn:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   12. BOOKING RESULT
+========================================= */
+
+.result-card {
+    max-width: 950px;
+    margin: 35px auto 0;
+    padding: 35px;
+    background: linear-gradient(145deg, rgba(46,30,62,0.98), rgba(18,10,27,0.98));
+    border: 1px solid #a16ad9;
+    border-radius: 14px;
+    box-shadow: 0 0 35px rgba(112,70,160,0.25);
+    animation: resultAppear 0.5s ease;
+}
+
+.result-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(198,160,255,0.2);
+}
+
+.result-heading > span {
+    font-size: 38px;
+}
+
+.result-heading h2 {
+    font-size: 23px;
+    color: #d4b5ff;
+}
+
+
+/* =========================================
+   13. BOOKING SUMMARY CATEGORIES
+========================================= */
+
+.result-group {
+    background: rgba(17,11,25,0.65);
+    border: 1px solid rgba(198,160,255,0.18);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+    transition: 0.3s;
+}
+
+.result-group:hover {
+    border-color: rgba(198,160,255,0.5);
+    background: rgba(35,22,48,0.85);
+}
+
+/* Category headings */
+
+.result-group h3 {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #d4b5ff;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(198,160,255,0.2);
+}
+
+/* Individual information rows */
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(198,160,255,0.09);
+}
+
+.result-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Information labels */
+
+.result-row span {
+    color: #bdb0ca;
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+}
+
+/* Information values */
+
+.result-row strong {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: right;
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   14. TOTAL BOOKING COST
+========================================= */
+
+.total-price {
+    margin-top: 25px;
+    padding: 28px;
+    text-align: center;
+
+    background:
+        linear-gradient(135deg, rgba(112,70,160,0.35), rgba(46,30,62,0.8));
+
+    border: 1px solid rgba(198,160,255,0.45);
+    border-radius: 12px;
+
+    box-shadow: 0 5px 25px rgba(112,70,160,0.15);
+}
+
+.total-price span {
+    display: block;
+    color: #cbb8df;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.total-price h2 {
+    color: #e2caff;
+    font-size: 40px;
+    margin-top: 8px;
+    text-shadow: 0 0 20px rgba(198,160,255,0.4);
+}
+
+.result-note {
+    text-align: center;
+    color: #a99db8;
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Result animation */
+
+@keyframes resultAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keep hidden booking summary hidden */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================
+   15. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+
+    .package-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .extra-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        height: auto;
+        min-height: 80px;
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .founder {
+        padding: 50px 7%;
+        min-height: auto;
+    }
+
+    .founder-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 25px 18px;
+    }
+
+    .founder-image img {
+        max-width: 300px;
+        height: 350px;
+    }
+
+    .founder-details h1 {
+        font-size: clamp(24px, 5vw, 30px);
+        overflow-wrap: anywhere;
+    }
+
+    .founder-intro {
+        text-align: left;
+    }
+
+    .booking-hero {
+        min-height: 450px;
+        padding: 70px 6%;
+    }
+
+    .hero-decoration {
+        right: 5%;
+        font-size: 65px;
+    }
+
+    .package-section,
+    .booking-section {
+        padding: 60px 6%;
+    }
+
+    .package-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card {
+        padding: 25px 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .calculate-area {
+        flex-direction: column;
+    }
+
+    .reset-btn {
+        flex: 1;
+    }
+
+    .extra-option img {
+        width: 85px;
+        height: 85px;
+    }
+
+    .result-card {
+        padding: 25px 18px;
+    }
+
+    .result-group {
+        padding: 18px;
+    }
+
+    .result-group h3 {
+        font-size: 14px;
+    }
+
+    .total-price h2 {
+        font-size: 34px;
+    }
+
+    body::before {
+        font-size: 50px;
+    }
+
+    body::after {
+        font-size: 65px;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .extra-option {
+        gap: 9px;
+        padding: 9px;
+    }
+
+    .extra-option img {
+        width: 70px;
+        height: 75px;
+    }
+
+    .extra-info h3 {
+        font-size: 12px;
+    }
+
+    .extra-info p {
+        font-size: 10px;
+    }
+
+    .extra-option input {
+        width: 16px;
+        height: 16px;
+    }
+
+    .result-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .result-row span,
+    .result-row strong {
+        text-align: left;
+    }
+
+    .result-row strong {
+        font-size: 14px;
+    }
+
+    .result-card {
+        padding: 20px 14px;
+    }
+
+    .result-group {
+        padding: 15px;
+    }
+
+    .total-price {
+        padding: 22px 12px;
+    }
+
+    .total-price h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* =========================================
+   16. VALIDATION ERROR MESSAGES
+========================================= */
+
+.error-message {
+    display: block;
+    color: #ff7070;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 7px;
+    min-height: 0;
+}
+
+.error-message:not(:empty) {
+    margin-bottom: 8px;
+}
+
+.input-error {
+    border: 1px solid #ff7070 !important;
+    box-shadow: 0 0 8px rgba(255, 112, 112, 0.2);
+}
+
+
+/* =========================================
+   17. ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* Keyboard focus effect */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid #d4b5ff;
+    outline-offset: 4px;
+}
